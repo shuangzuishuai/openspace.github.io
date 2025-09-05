@@ -1,30 +1,205 @@
 <!DOCTYPE html>
-<html>
+<html lang="zh-CN">
     <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
         <style>
-        .lj{
-            text-decoration: none;
-            color: white;
-        }
-
-        .bj{
-            background-color: royalblue;
-            width: 200px;
-            height: 130px;
-            border-radius:3%;
-            text-align: center;
-            display:table-cell;
-            background-image: linear-gradient(120deg, #a1c4fd 0%, #c2e9fb 100%);
-        }
-    </style>
-        <title>欢迎来到openspace官网</title>        
+            * {
+                margin: 0;
+                padding: 0;
+                box-sizing: border-box;
+            }
+            
+            body {
+                font-family: 'Microsoft YaHei', sans-serif;
+                background-image: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+                background-size: cover;
+                background-attachment: fixed;
+                min-height: 100vh;
+                color: #333;
+            }
+            
+            .container {
+                max-width: 1200px;
+                margin: 0 auto;
+                padding: 20px;
+            }
+            
+            header {
+                text-align: center;
+                padding: 40px 0;
+            }
+            
+            h1 {
+                color: white;
+                font-size: 3rem;
+                margin-bottom: 10px;
+                text-shadow: 2px 2px 4px rgba(0,0,0,0.3);
+                animation: fadeInUp 1s ease-out;
+            }
+            
+            /* 特别活动区域 */
+            .special-event {
+                background: rgba(255, 255, 255, 0.95);
+                border-radius: 15px;
+                padding: 30px;
+                margin: 30px auto;
+                max-width: 900px;
+                box-shadow: 0 10px 30px rgba(0,0,0,0.2);
+                text-align: center;
+                animation: slideIn 0.8s ease-out;
+            }
+            
+            .special-event h2 {
+                color: #667eea;
+                font-size: 2rem;
+                margin-bottom: 20px;
+                position: relative;
+                display: inline-block;
+            }
+            
+            .special-event h2::after {
+                content: '';
+                position: absolute;
+                bottom: -10px;
+                left: 10%;
+                width: 80%;
+                height: 3px;
+                background: linear-gradient(90deg, transparent, #667eea, transparent);
+            }
+            
+            .special-event p {
+                font-size: 1.1rem;
+                line-height: 1.6;
+                color: #666;
+                margin-bottom: 25px;
+            }
+            
+            /* 功能介绍卡片 */
+            .feature-card {
+                background: linear-gradient(120deg, #a1c4fd 0%, #c2e9fb 100%);
+                border-radius: 15px;
+                padding: 30px;
+                margin: 20px auto;
+                max-width: 600px;
+                text-align: center;
+                box-shadow: 0 8px 25px rgba(0,0,0,0.15);
+                transition: transform 0.3s ease, box-shadow 0.3s ease;
+            }
+            
+            .feature-card:hover {
+                transform: translateY(-5px);
+                box-shadow: 0 12px 30px rgba(0,0,0,0.2);
+            }
+            
+            .feature-card h3 {
+                color: white;
+                font-size: 1.8rem;
+                margin-bottom: 15px;
+                text-shadow: 1px 1px 3px rgba(0,0,0,0.2);
+            }
+            
+            .feature-card p {
+                color: white;
+                font-size: 1.1rem;
+                margin-bottom: 20px;
+            }
+            
+            /* 按钮样式 */
+            .btn {
+                display: inline-block;
+                padding: 12px 30px;
+                background: white;
+                color: #667eea;
+                text-decoration: none;
+                font-weight: bold;
+                border-radius: 30px;
+                font-size: 1.1rem;
+                transition: all 0.3s ease;
+                box-shadow: 0 4px 15px rgba(0,0,0,0.1);
+                border: none;
+                cursor: pointer;
+            }
+            
+            .btn:hover {
+                background: #f8f9fa;
+                transform: translateY(-2px);
+                box-shadow: 0 6px 20px rgba(0,0,0,0.15);
+            }
+            
+            .btn-primary {
+                background: linear-gradient(45deg, #667eea, #764ba2);
+                color: white;
+            }
+            
+            .btn-primary:hover {
+                background: linear-gradient(45deg, #5a67d8, #4c51bf);
+            }
+            
+            /* 动画效果 */
+            @keyframes fadeInUp {
+                from {
+                    opacity: 0;
+                    transform: translateY(20px);
+                }
+                to {
+                    opacity: 1;
+                    transform: translateY(0);
+                }
+            }
+            
+            @keyframes slideIn {
+                from {
+                    opacity: 0;
+                    transform: translateY(30px);
+                }
+                to {
+                    opacity: 1;
+                    transform: translateY(0);
+                }
+            }
+            
+            /* 响应式设计 */
+            @media (max-width: 768px) {
+                h1 {
+                    font-size: 2.2rem;
+                }
+                
+                .special-event h2 {
+                    font-size: 1.6rem;
+                }
+                
+                .feature-card h3 {
+                    font-size: 1.5rem;
+                }
+                
+                .btn {
+                    padding: 10px 20px;
+                    font-size: 1rem;
+                }
+            }
+        </style>
+        <title>欢迎来到OpenSpace官网</title>        
     </head>
-    <body style="background-image: linear-gradient(45deg, #93a5cf 0%, #e4efe9 100%);background-size: cover;background-attachment: fixed;">
-        <h1 style="text-align: center;">OpenSpace官网</h1>
-        <center><div class="bj">
-            <b><p style="color: white;">全新功能介绍</p></b>
-            <b><p style="color: white;">SpaceOS 2.0全新升级</p></b>
-            <b><a href="pg2.html" class="lj">点击此处跳转</a></b>
-        </div></center>
+    <body>
+        <div class="container">
+            <header>
+                <h1>OpenSpace官网</h1>
+            </header>
+            
+            <!-- 特别活动区域 -->
+            <div class="special-event">
+                <h2>2025年Space特别活动</h2>
+                <p>9.5晚上10:30</p>
+                <a href="#" class="btn btn-primary">了解更多</a>
+            </div>
+            
+            <!-- 功能介绍卡片 -->
+            <div class="feature-card">
+                <h3>下载链接</h3>
+                <p>SpaceOS历代版本 Space store</p>
+                <a href="pg3.html" class="btn">了解详情</a>
+            </div>
+        </div>
     </body>
 </html>
